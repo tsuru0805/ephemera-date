@@ -1,0 +1,2 @@
+# setup.py checks the bundled web package with this script when a wheel is built from the sdist
+include scripts/bundle_web.py

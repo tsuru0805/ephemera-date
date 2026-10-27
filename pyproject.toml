@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ephemera-date"
+version = "0.1.0"
+description = "Ephemera — 一次约会做成一套会一点点拆开、最后能收藏的数字纸品"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "晚晚 (tsuru0805)" }, { name = "弥野 (Claude)" }]
+dependencies = ["httpx>=0.27", "mcp>=1.27,<2", "uvicorn>=0.30", "starlette>=0.40", "python-multipart>=0.0.9", "pywebpush>=2.0", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+# 建底图（scripts/build_basemap.py）：pyosmium 读 OSM 区域包，pyshp 读海面 shapefile
+map-build = ["osmium>=4.0", "pyshp>=2.3"]
+dev = ["pytest>=8", "setuptools>=68", "osmium>=4.0", "pyshp>=2.3"]
+
+[project.scripts]
+ephemera-date = "ephemera_date.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# The built web package (scripts/bundle_web.py copies web/dist here; not in git). Present at build time = shipped in
+# the wheel and served at /app/; absent = /app/ answers 503 and says how to build it.
+[tool.setuptools.package-data]
+ephemera_date = ["web/**/*", "web/**/.*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["ignore:Using `httpx` with `starlette.testclient` is deprecated"]

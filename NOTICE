@@ -1,0 +1,49 @@
+Required Notice: Copyright (c) 2026 tsuru0805 (晚晚)
+Required Notice: Commercial use requires a separate written license from tsuru0805. Contact https://github.com/tsuru0805.
+
+第三方材料（各按原许可，不随本仓改授权）
+==========================================
+
+1. OpenStreetMap 数据 —— ODbL 1.0
+   https://opendatacommons.org/licenses/odbl/1-0/ ，署名「© OpenStreetMap contributors」
+   （https://www.openstreetmap.org/copyright）
+   - 由 scripts/build_basemap.py 建出的底图库（区域包来自 Geofabrik，https://download.geofabrik.de/ ；
+     可选海面来自 https://osmdata.openstreetmap.de/ 的 water-polygons-split-4326）。本仓不分发完整库。
+   - tests/places/fixtures/nominatim_geocode_huangpu.json
+     tests/places/fixtures/nominatim_search_cafe_near_monaco.json
+     tests/places/fixtures/nominatim_search_shanghai_museum.json
+     公共 Nominatim 的真实响应录制（2026-10-24），属 OSM 数据的极小摘录，文件内带署名。
+   - 运行时 OSM 搜索（Nominatim / Photon）返回的数据；页面显示时须带上述署名。
+
+2. Natural Earth —— 公有领域
+   https://www.naturalearthdata.com/about/terms-of-use/
+   - src/ephemera_date/places/_boundary_data.py：1:10m Admin 0 – Countries（5.1.1）简化后的国界多边形，
+     只用于判断坐标是否需要做 GCJ-02 换算，不代表任何领土立场。
+
+   - tests/places/test_coords.py 里国界两侧城市的坐标：1:10m Populated Places。
+
+3. Wikidata —— CC0 1.0
+   https://www.wikidata.org/wiki/Wikidata:Licensing
+   - tests/places/test_coords.py 里沿海城市与海边控制点的坐标（属性 P625，按条目号标注）。
+
+3a. GCJ-02 偏移公式的对照数值
+   - src/ephemera_date/places/coords.py 是独立实现；tests/places/test_coords.py 的 4 组对照坐标取自
+     https://github.com/googollee/eviltransform （BSD 2-Clause 式许可）与
+     https://github.com/wandergis/coordtransform （MIT）公开的测试/示例数据（只取数值，不含代码）。
+
+4. 地点服务的接口标识与响应格式
+   - 谷歌 Places API (New) 的地点类型名（src/ephemera_date/places/kinds.py 的 GOOGLE_TYPE_MAP 键）取自
+     https://developers.google.com/maps/documentation/places/web-service/place-types ，
+     该页内容按 CC BY 4.0 授权（https://creativecommons.org/licenses/by/4.0/），© Google。
+   - 高德 Web 服务 POI 分类编码（src/ephemera_date/places/kinds.py 的 AMAP_TYPE_MAP 键）是高德接口回包里
+     typecode 字段的取值，定义见高德开放平台「相关下载」https://lbs.amap.com/api/webservice/download 的
+     POI 分类编码表。本仓只用编码本身，不收录、不分发该编码表；行尾注释是本仓自己的说明。
+   - tests/places/fixtures/ 下的 google_*.json、amap_*.json、photon_search.json 按各家公开文档的响应格式
+     手写，地点、编号、坐标为虚构或公式换算所得，不是录制的真实调用。
+   本仓与谷歌、高德、komoot（Photon）均无关联，也未获其背书。
+
+5. 依赖包（不随本仓分发，安装时从 PyPI 获取）
+   httpx (BSD-3-Clause) · mcp (MIT) · uvicorn (BSD-3-Clause) · starlette (BSD-3-Clause) ·
+   python-multipart (Apache-2.0) · pywebpush (MPL-2.0) · PyYAML (MIT)
+   可选：osmium / pyosmium (BSD-2-Clause) · pyshp (MIT)
+   测试：pytest (MIT) · lorecards-mcp (MIT，https://github.com/tsuru0805/lorecards-mcp ，只在测试里作为外部命令调用)

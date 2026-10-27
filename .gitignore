@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+*.db
+*.db-wal
+*.db-shm
+/state/
+/data/
+.pytest_cache/
+*.egg-info/
+node_modules/
+.env
+# the built web package copied into the Python package (scripts/bundle_web.py, Dockerfile)
+/src/ephemera_date/web/
+/build/
