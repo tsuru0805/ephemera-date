@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- maximum-scale=1: no automatic zoom when a field under 16px gets focus (iOS), which would leave the page zoomed.
+         Pinch-zoom by the user stays possible: iOS ignores maximum-scale for the user's own gestures, so this is not
+         user-scalable=no (which would lock people who need to zoom out). viewport-fit=cover: env(safe-area-inset-*). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>Ephemera</title>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  <meta name="theme-color" content="#FBF6EF">
+<meta name="theme-color" content="#FBF6EF">
+</head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+  
+<script src="/ephemera-date/_expo/static/js/web/index-fab355a993f8fcbed404a8491d233c2d.js" defer></script>
+</body>
+</html>
