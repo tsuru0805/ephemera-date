@@ -1,0 +1,26 @@
+.git
+.github
+.venv
+.env
+**/__pycache__
+**/*.pyc
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.osm.pbf
+tests
+docs
+build
+dist
+*.egg-info
+.pytest_cache
+# the web package is built inside the image (Dockerfile stage "web"); never send local builds or node_modules
+src/ephemera_date/web
+web/node_modules
+web/dist
+web/dist-demo
+web/.expo
+web/test-results
+web/playwright-report
+web/public/canvaskit.wasm

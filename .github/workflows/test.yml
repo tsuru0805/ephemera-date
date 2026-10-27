@@ -1,0 +1,115 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      # lorecards-mcp needs Python >= 3.11, so its CLI gets its own 3.12 venv; the last version listed is the default
+      - uses: actions/setup-python@v5
+        with:
+          python-version: |
+            3.12
+            ${{ matrix.python }}
+
+      - name: Install lorecards CLI (event-card tests read the cards with it)
+        run: |
+          python3.12 -m venv /tmp/lorecards-venv
+          /tmp/lorecards-venv/bin/pip install "git+https://github.com/tsuru0805/lorecards-mcp"
+          /tmp/lorecards-venv/bin/lorecards --help > /dev/null
+
+      - name: Install package with dev extras (pytest, osmium, pyshp)
+        run: |
+          python --version
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Test
+        env:
+          EPHEMERA_REQUIRE_LORECARDS: "1"
+          LORECARDS_BIN: /tmp/lorecards-venv/bin/lorecards
+        run: python -m pytest -q
+
+  web:
+    # the web package: unit tests (jest) and the production export (base path /app, what the engine serves)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      # react-native 0.81 / metro need Node >= 20.19.4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        env:
+          EXPO_NO_TELEMETRY: "1"
+        run: npm run build
+
+  package:
+    # the release package: sdist + wheel built the way users get them (setup.py builds the pages with Node), and the
+    # wheel must carry them (ephemera_date/web/index.html and _expo/); a package without pages fails here
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build sdist and wheel (the wheel is built from the sdist)
+        env:
+          EXPO_NO_TELEMETRY: "1"
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build --outdir dist
+
+      - name: The wheel carries the pages
+        run: |
+          python - <<'PY'
+          import glob, json, sys, zipfile
+          whl = glob.glob("dist/ephemera_date-*.whl")
+          assert len(whl) == 1, whl
+          z = zipfile.ZipFile(whl[0])
+          names = z.namelist()
+          web = [n for n in names if n.startswith("ephemera_date/web/")]
+          problems = []
+          if "ephemera_date/web/index.html" not in names:
+              problems.append("no ephemera_date/web/index.html")
+          if not any(n.startswith("ephemera_date/web/_expo/") for n in names):
+              problems.append("no ephemera_date/web/_expo/")
+          info = json.loads(z.read("ephemera_date/_build.json"))
+          if info.get("web") is not True:
+              problems.append(f"_build.json says {info}")
+          print(f"{whl[0]}: {len(web)} web files, build info {info}")
+          sys.exit("; ".join(problems) or None)
+          PY
