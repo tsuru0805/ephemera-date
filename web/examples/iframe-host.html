@@ -1,0 +1,139 @@
+<!doctype html>
+<!--
+  A minimal host for the Ephemera web package in an <iframe>: the embedding protocol v1 (docs/EMBED.md), host side.
+  Open it from any web server:  iframe-host.html?page=https://your.engine.example/app/&api=https://your.engine.example
+  The credential is typed into this page and sent only inside the init message — never in a URL.
+  On the engine set EPHEMERA_ALLOWED_ORIGINS to the page's origin when the page and the engine are on different origins.
+-->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera · iframe host example</title>
+<style>
+  body { margin: 0; font: 13px/1.5 system-ui, sans-serif; background: #eee; display: flex; gap: 16px; padding: 16px; }
+  #phone { width: 390px; height: 844px; border-radius: 28px; overflow: hidden; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.18); position: relative; flex: none; }
+  #phone iframe { width: 100%; height: 100%; border: 0; }
+  #closed { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; color: #888; }
+  #side { display: flex; flex-direction: column; gap: 8px; max-width: 420px; }
+  #side input { width: 100%; box-sizing: border-box; }
+  #log { height: 360px; overflow: auto; background: #fff; padding: 8px; font: 11px/1.4 ui-monospace, monospace; white-space: pre-wrap; }
+  button { margin: 2px 4px 2px 0; }
+</style>
+</head>
+<body>
+<div id="phone"><iframe id="page" title="Ephemera" allow="accelerometer; gyroscope"></iframe><div id="closed">页面要求关闭（close）</div></div>
+<div id="side">
+  <label>engine (apiBase) <input id="api" placeholder="https://your.engine.example"></label>
+  <label>credential (EPHEMERA_HER_TOKEN) <input id="cred" type="password" autocomplete="off"></label>
+  <div>
+    <button id="b-back">navigate back</button>
+    <button id="b-tele">navigate telegrams</button>
+    <button id="b-gone">navigate box #999</button>
+    <button id="b-bg">lifecycle background</button>
+    <button id="b-fg">lifecycle active</button>
+    <button id="b-kb">keyboard 336</button>
+    <button id="b-kb0">keyboard 0</button>
+    <button id="b-safe">safeArea 47/34</button>
+    <button id="b-logout">logout</button>
+    <button id="b-reopen">reopen</button>
+  </div>
+  <label><input id="pick-cancel" type="checkbox"> pickPhoto: answer "cancelled" without asking</label>
+  <div id="log"></div>
+</div>
+<script>
+(() => {
+  const q = new URLSearchParams(location.search);
+  const pageUrl = new URL(q.get("page") || "/app/", location.href);
+  const pageOrigin = pageUrl.origin;
+  const iframe = document.getElementById("page");
+  // (the credential is never shown in the log)
+  const log = (dir, m) => {
+    const el = document.getElementById("log");
+    el.textContent += `${dir} ${JSON.stringify(m, (k, v) => (k === "credential" ? "***" : v))}\n`;
+    el.scrollTop = 1e9;
+  };
+  document.getElementById("api").value = q.get("api") || pageOrigin;
+
+  // the page only listens to the origin it was told about (?host=) and only answers to it
+  const open = () => {
+    const u = new URL(pageUrl);
+    u.searchParams.set("host", location.origin);
+    iframe.src = u.href;
+    iframe.style.display = "";
+    document.getElementById("closed").style.display = "none";
+  };
+  let seq = 0;
+  const send = (type, payload) => {
+    const m = { v: 1, id: `h${++seq}`, type, payload: payload || {} };
+    iframe.contentWindow.postMessage(m, pageOrigin);          // never "*"
+    log("→", m);
+    return m.id;
+  };
+  const reply = (id, body) => { const m = { id, ...body }; iframe.contentWindow.postMessage(m, pageOrigin); log("→", m); };
+
+  const pickPhoto = (id) => {
+    if (document.getElementById("pick-cancel").checked) { reply(id, { ok: false, cancelled: true }); return; }
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/jpeg,image/png,image/heic,image/heif,image/avif";
+    let done = false;
+    input.addEventListener("cancel", () => { if (!done) { done = true; reply(id, { ok: false, cancelled: true }); } });
+    input.addEventListener("change", () => {
+      const f = input.files && input.files[0];
+      if (!f) { done = true; reply(id, { ok: false, cancelled: true }); return; }
+      if (f.size > 20 * 1024 * 1024) { done = true; reply(id, { ok: false, error: "这张照片超过 20MB" }); return; }
+      const fr = new FileReader();
+      fr.onload = () => {
+        const url = URL.createObjectURL(f);
+        const img = new Image();
+        img.onload = () => {   // original bytes, original ratio; width/height are required
+          done = true;
+          reply(id, { ok: true, result: { file: { name: f.name, mime: f.type, size: f.size, width: img.naturalWidth, height: img.naturalHeight, data: String(fr.result).split(",")[1] } } });
+          URL.revokeObjectURL(url);
+        };
+        img.onerror = () => { done = true; reply(id, { ok: false, error: "读不出这张照片的宽高" }); };
+        img.src = url;
+      };
+      fr.readAsDataURL(f);
+    });
+    input.click();
+  };
+
+  window.addEventListener("message", (e) => {
+    if (e.origin !== pageOrigin || e.source !== iframe.contentWindow) return;   // only our page
+    const m = e.data;
+    log("←", m);
+    if (!m || typeof m !== "object") return;
+    switch (m.type) {
+      case "ready":
+        send("init", { apiBase: document.getElementById("api").value.trim(), credential: document.getElementById("cred").value,
+          safeArea: { top: 0, right: 0, bottom: 0, left: 0 } });
+        break;
+      case "close":
+        iframe.style.display = "none";
+        document.getElementById("closed").style.display = "flex";
+        break;
+      case "pickPhoto": pickPhoto(m.id); break;
+      case "openExternal": window.open(m.payload && m.payload.url, "_blank", "noopener"); break;
+      case "event": log("!", `notify the user: ${JSON.stringify(m.payload)}`); break;
+    }
+  });
+
+  const on = (id, f) => document.getElementById(id).addEventListener("click", f);
+  on("b-back", () => send("navigate", { page: "back" }));
+  on("b-tele", () => send("navigate", { page: "telegrams" }));
+  on("b-gone", () => send("navigate", { page: "box", planId: 999 }));
+  on("b-bg", () => send("lifecycle", { state: "background" }));
+  on("b-fg", () => send("lifecycle", { state: "active" }));
+  on("b-kb", () => send("keyboard", { height: 336 }));
+  on("b-kb0", () => send("keyboard", { height: 0 }));
+  on("b-safe", () => send("safeArea", { top: 47, right: 0, bottom: 34, left: 0 }));
+  on("b-logout", () => send("logout"));
+  on("b-reopen", open);
+  document.addEventListener("visibilitychange", () => send("lifecycle", { state: document.hidden ? "background" : "active" }));
+  open();
+})();
+</script>
+</body>
+</html>

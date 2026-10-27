@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-demo/
+.expo/
+expo-env.d.ts
+test-results/
+playwright-report/
+*.log
+public/canvaskit.wasm
+__pycache__/
