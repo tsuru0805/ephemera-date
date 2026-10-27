@@ -1,0 +1,32 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://github.com/komoot/photon#search-api ；数据形状 © OpenStreetMap contributors",
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.4247474,
+     43.7391967
+    ]
+   },
+   "properties": {
+    "osm_type": "N",
+    "osm_id": 123456,
+    "osm_key": "amenity",
+    "osm_value": "cafe",
+    "name": "Example Café",
+    "street": "Place du Casino",
+    "city": "Monaco",
+    "country": "Monaco",
+    "extent": [
+     7.42,
+     43.74,
+     7.43,
+     43.73
+    ]
+   }
+  }
+ ]
+}

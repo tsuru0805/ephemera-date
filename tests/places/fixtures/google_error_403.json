@@ -1,0 +1,8 @@
+{
+ "_source": "Places (New) 错误响应格式（google.rpc.Status）：https://cloud.google.com/apis/design/errors",
+ "error": {
+  "code": 403,
+  "message": "API key not valid. Please pass a valid API key.",
+  "status": "PERMISSION_DENIED"
+ }
+}

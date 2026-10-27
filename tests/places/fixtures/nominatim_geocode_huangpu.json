@@ -1,0 +1,35 @@
+{
+ "_source": "真实调用录制（2026-10-24，公共 Nominatim，format=jsonv2）；数据 © OpenStreetMap contributors，ODbL 1.0",
+ "request": {
+  "url": "https://nominatim.openstreetmap.org/search",
+  "params": {
+   "q": "黄浦区, 上海",
+   "format": "jsonv2",
+   "limit": 1
+  }
+ },
+ "status": 200,
+ "body": [
+  {
+   "place_id": 222914503,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "relation",
+   "osm_id": 371650,
+   "lat": "31.2335925",
+   "lon": "121.4798640",
+   "category": "boundary",
+   "type": "administrative",
+   "place_rank": 12,
+   "importance": 0.5314506401266076,
+   "addresstype": "city",
+   "name": "黄浦区",
+   "display_name": "黄浦区, 上海市, 中国",
+   "boundingbox": [
+    "31.1901912",
+    "31.2463061",
+    "121.4522114",
+    "121.5059585"
+   ]
+  }
+ ]
+}

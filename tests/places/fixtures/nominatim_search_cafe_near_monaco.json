@@ -1,0 +1,184 @@
+{
+ "_source": "真实调用录制（2026-10-24，公共 Nominatim，format=jsonv2）；数据 © OpenStreetMap contributors，ODbL 1.0",
+ "request": {
+  "url": "https://nominatim.openstreetmap.org/search",
+  "params": {
+   "q": "café",
+   "format": "jsonv2",
+   "limit": 8,
+   "viewbox": "7.37700,43.79000,7.47700,43.69000",
+   "bounded": 1
+  }
+ },
+ "status": 200,
+ "body": [
+  {
+   "place_id": 82302891,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 11878734765,
+   "lat": "43.7549033",
+   "lon": "7.3978327",
+   "category": "amenity",
+   "type": "cafe",
+   "place_rank": 30,
+   "importance": 5.932936598759468e-05,
+   "addresstype": "amenity",
+   "name": "Columbus Café & Co",
+   "display_name": "Columbus Café & Co, La Provençale, La Turbie, 尼斯, 滨海阿尔卑斯省, Provence-Alpes-Côte d'Azur, 法國本土;法国本土, 06320, 法国;法國",
+   "boundingbox": [
+    "43.7548533",
+    "43.7549533",
+    "7.3977827",
+    "7.3978827"
+   ]
+  },
+  {
+   "place_id": 81933688,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 3087468543,
+   "lat": "43.7391967",
+   "lon": "7.4247474",
+   "category": "amenity",
+   "type": "cafe",
+   "place_rank": 30,
+   "importance": 5.866712443727806e-05,
+   "addresstype": "amenity",
+   "name": "Le Palace Café",
+   "display_name": "Le Palace Café, Avenue de la Costa, Monte-Carlo, 摩纳哥, Monaco, 98000, 摩纳哥",
+   "boundingbox": [
+    "43.7391467",
+    "43.7392467",
+    "7.4246974",
+    "7.4247974"
+   ]
+  },
+  {
+   "place_id": 81970629,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 4020124945,
+   "lat": "43.7306350",
+   "lon": "7.4174694",
+   "category": "amenity",
+   "type": "cafe",
+   "place_rank": 30,
+   "importance": 7.896620126645331e-05,
+   "addresstype": "amenity",
+   "name": "Le kiosque",
+   "display_name": "Le kiosque, Avenue Albert II, Fontvieille, 摩纳哥, Monaco, 98020, 摩纳哥",
+   "boundingbox": [
+    "43.7305850",
+    "43.7306850",
+    "7.4174194",
+    "7.4175194"
+   ]
+  },
+  {
+   "place_id": 82376819,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 3574643941,
+   "lat": "43.7335238",
+   "lon": "7.4222795",
+   "category": "amenity",
+   "type": "pub",
+   "place_rank": 30,
+   "importance": 7.896620126645331e-05,
+   "addresstype": "amenity",
+   "name": "Explorers Pub",
+   "display_name": "Explorers Pub, 36, Route de la Piscine, La Condamine, 摩纳哥, Monaco, 98000, 摩纳哥",
+   "boundingbox": [
+    "43.7334738",
+    "43.7335738",
+    "7.4222295",
+    "7.4223295"
+   ]
+  },
+  {
+   "place_id": 82337584,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 2622751938,
+   "lat": "43.7325973",
+   "lon": "7.4177713",
+   "category": "amenity",
+   "type": "cafe",
+   "place_rank": 30,
+   "importance": 7.896620126645331e-05,
+   "addresstype": "amenity",
+   "name": "星巴克",
+   "display_name": "星巴克, Promenade Honoré II, La Condamine, 摩纳哥, Monaco, 98020, 摩纳哥",
+   "boundingbox": [
+    "43.7325473",
+    "43.7326473",
+    "7.4177213",
+    "7.4178213"
+   ]
+  },
+  {
+   "place_id": 82200061,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 12716856547,
+   "lat": "43.7326629",
+   "lon": "7.4192695",
+   "category": "amenity",
+   "type": "cafe",
+   "place_rank": 30,
+   "importance": 7.896620126645331e-05,
+   "addresstype": "amenity",
+   "name": "",
+   "display_name": "Place d'Armes, La Condamine, 摩纳哥, Monaco, 98020, 摩纳哥",
+   "boundingbox": [
+    "43.7326129",
+    "43.7327129",
+    "7.4192195",
+    "7.4193195"
+   ]
+  },
+  {
+   "place_id": 381636550,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 10005045289,
+   "lat": "43.7310532",
+   "lon": "7.4224498",
+   "category": "amenity",
+   "type": "cafe",
+   "place_rank": 30,
+   "importance": 7.896620126645331e-05,
+   "addresstype": "amenity",
+   "name": "Costa",
+   "display_name": "Costa, Rue Basse, Monaco-Ville, 摩纳哥, Monaco, 98000, 摩纳哥",
+   "boundingbox": [
+    "43.7310032",
+    "43.7311032",
+    "7.4223998",
+    "7.4224998"
+   ]
+  },
+  {
+   "place_id": 82168177,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 7829931786,
+   "lat": "43.7274968",
+   "lon": "7.4220726",
+   "category": "amenity",
+   "type": "pub",
+   "place_rank": 30,
+   "importance": 7.896620126645331e-05,
+   "addresstype": "amenity",
+   "name": "Ship and Castle",
+   "display_name": "Ship and Castle, 42, Quai Jean-Charles Rey, Fontvieille, 摩纳哥, Monaco, 98000, 摩纳哥",
+   "boundingbox": [
+    "43.7274468",
+    "43.7275468",
+    "7.4220226",
+    "7.4221226"
+   ]
+  }
+ ]
+}

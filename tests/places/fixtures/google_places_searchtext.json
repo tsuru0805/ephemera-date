@@ -1,0 +1,55 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://developers.google.com/maps/documentation/places/web-service/text-search 、Place 资源 https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+ "places": [
+  {
+   "id": "ChIJexample-ramen-0001",
+   "types": [
+    "ramen_restaurant",
+    "japanese_restaurant",
+    "restaurant",
+    "food",
+    "point_of_interest",
+    "establishment"
+   ],
+   "formattedAddress": "1 Example St, Sample City",
+   "location": {
+    "latitude": 43.7389,
+    "longitude": 7.4262
+   },
+   "displayName": {
+    "text": "Example Ramen",
+    "languageCode": "en"
+   },
+   "primaryType": "restaurant"
+  },
+  {
+   "id": "ChIJexample-cafe-0002",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "food",
+    "point_of_interest",
+    "establishment"
+   ],
+   "formattedAddress": "2 Sample Ave, Sample City",
+   "location": {
+    "latitude": 43.7401,
+    "longitude": 7.427
+   },
+   "displayName": {
+    "text": "Sample Coffee",
+    "languageCode": "en"
+   },
+   "primaryType": "cafe"
+  },
+  {
+   "id": "ChIJexample-noloc-0003",
+   "types": [
+    "museum"
+   ],
+   "displayName": {
+    "text": "No Location Museum"
+   }
+  }
+ ]
+}

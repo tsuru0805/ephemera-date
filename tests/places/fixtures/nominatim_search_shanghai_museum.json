@@ -1,0 +1,77 @@
+{
+ "_source": "真实调用录制（2026-10-24，公共 Nominatim，format=jsonv2）；数据 © OpenStreetMap contributors，ODbL 1.0",
+ "request": {
+  "url": "https://nominatim.openstreetmap.org/search",
+  "params": {
+   "q": "上海博物馆",
+   "format": "jsonv2",
+   "limit": 8
+  }
+ },
+ "status": 200,
+ "body": [
+  {
+   "place_id": 224033363,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 161090899,
+   "lat": "31.2301577",
+   "lon": "121.4709998",
+   "category": "tourism",
+   "type": "museum",
+   "place_rank": 30,
+   "importance": 0.47219196607725816,
+   "addresstype": "tourism",
+   "name": "上海博物馆",
+   "display_name": "上海博物馆, 201, 人民大道, 江阴社区, 南京东路街道, 上海市, 黄浦区, 上海市, 200001, 中国",
+   "boundingbox": [
+    "31.2295968",
+    "31.2307847",
+    "121.4703157",
+    "121.4717520"
+   ]
+  },
+  {
+   "place_id": 224158847,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 12379457643,
+   "lat": "31.2294396",
+   "lon": "121.4704453",
+   "category": "highway",
+   "type": "bus_stop",
+   "place_rank": 30,
+   "importance": 7.91126878766616e-05,
+   "addresstype": "highway",
+   "name": "上海博物馆",
+   "display_name": "上海博物馆, 武胜路, 江阴社区, 南京东路街道, 上海市, 黄浦区, 上海市, 200001, 中国",
+   "boundingbox": [
+    "31.2293896",
+    "31.2294896",
+    "121.4703953",
+    "121.4704953"
+   ]
+  },
+  {
+   "place_id": 224151639,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "node",
+   "osm_id": 11667615958,
+   "lat": "31.2287018",
+   "lon": "121.4717397",
+   "category": "highway",
+   "type": "bus_stop",
+   "place_rank": 30,
+   "importance": 7.91126878766616e-05,
+   "addresstype": "highway",
+   "name": "上海博物馆",
+   "display_name": "上海博物馆, 普安路, 均乐社区, 南京东路街道, 上海市, 黄浦区, 上海市, 200021, 中国",
+   "boundingbox": [
+    "31.2286518",
+    "31.2287518",
+    "121.4716897",
+    "121.4717897"
+   ]
+  }
+ ]
+}

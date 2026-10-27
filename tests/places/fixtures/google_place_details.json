@@ -1,0 +1,5 @@
+{
+ "_doc": "手写样例，格式照官方文档 Place Details (New)：https://developers.google.com/maps/documentation/places/web-service/place-details （GET https://places.googleapis.com/v1/places/{PLACE_ID}，X-Goog-FieldMask: id,location）。不是真实调用录制，地点 ID 与坐标都是虚构的",
+ "id": "ChIJexample-ramen-0001",
+ "location": {"latitude": 43.7384, "longitude": 7.4246}
+}

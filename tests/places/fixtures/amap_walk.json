@@ -1,0 +1,20 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://lbs.amap.com/api/webservice/guide/api/newroute （show_fields=cost）",
+ "status": "1",
+ "info": "OK",
+ "infocode": "10000",
+ "count": "1",
+ "route": {
+  "origin": "121.475000,31.228000",
+  "destination": "121.494000,31.237000",
+  "paths": [
+   {
+    "distance": "2310",
+    "cost": {
+     "duration": "1848"
+    },
+    "steps": []
+   }
+  ]
+ }
+}

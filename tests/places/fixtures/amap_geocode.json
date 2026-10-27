@@ -1,0 +1,23 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://lbs.amap.com/api/webservice/guide/api/georegeo",
+ "status": "1",
+ "info": "OK",
+ "infocode": "10000",
+ "count": "1",
+ "geocodes": [
+  {
+   "formatted_address": "上海市黄浦区人民大道201号",
+   "country": "中国",
+   "province": "上海市",
+   "citycode": "021",
+   "city": "上海市",
+   "district": "黄浦区",
+   "township": [],
+   "street": "人民大道",
+   "number": "201号",
+   "adcode": "310101",
+   "location": "121.475532,31.228223",
+   "level": "门牌号"
+  }
+ ]
+}

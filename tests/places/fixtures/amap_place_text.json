@@ -1,0 +1,59 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://lbs.amap.com/api/webservice/guide/api-advanced/newpoisearch ；坐标为境内 GCJ-02（由已知 WGS-84 点按公式换算得到，便于验证归一化）",
+ "_wgs84_truth": {
+  "上海博物馆": [
+   31.2301577,
+   121.4709998
+  ],
+  "示例咖啡": [
+   31.2397,
+   121.49
+  ]
+ },
+ "status": "1",
+ "info": "OK",
+ "infocode": "10000",
+ "count": "3",
+ "pois": [
+  {
+   "parent": "",
+   "address": "人民大道201号",
+   "distance": "",
+   "pcode": "310000",
+   "adcode": "310101",
+   "pname": "上海市",
+   "cityname": "上海市",
+   "type": "科教文化服务;博物馆;博物馆",
+   "typecode": "140100",
+   "adname": "黄浦区",
+   "citycode": "021",
+   "name": "上海博物馆",
+   "location": "121.475532,31.228223",
+   "id": "B00155EXAMPLE1"
+  },
+  {
+   "parent": "",
+   "address": [],
+   "distance": "",
+   "pcode": "310000",
+   "adcode": "310101",
+   "pname": "上海市",
+   "cityname": "上海市",
+   "type": "餐饮服务;咖啡厅;星巴克咖啡",
+   "typecode": "050501",
+   "adname": "黄浦区",
+   "citycode": "021",
+   "name": "示例咖啡",
+   "location": "121.494468,31.237715",
+   "id": "B00155EXAMPLE2"
+  },
+  {
+   "parent": "",
+   "address": "",
+   "name": "坏坐标",
+   "location": "",
+   "typecode": "050000",
+   "id": "B00155EXAMPLE3"
+  }
+ ]
+}

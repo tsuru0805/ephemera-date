@@ -1,0 +1,9 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://developers.google.com/maps/documentation/routes/compute_route_directions ；Route 资源 https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+ "routes": [
+  {
+   "distanceMeters": 812,
+   "duration": "655s"
+  }
+ ]
+}

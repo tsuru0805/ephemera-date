@@ -1,0 +1,21 @@
+{
+ "_source": "按官方文档响应格式手写（非真实调用）：https://developers.google.com/maps/documentation/geocoding/requests-geocoding#GeocodingResponses",
+ "results": [
+  {
+   "address_components": [],
+   "formatted_address": "Place du Casino, 98000 Monaco",
+   "geometry": {
+    "location": {
+     "lat": 43.7397,
+     "lng": 7.428
+    },
+    "location_type": "GEOMETRIC_CENTER"
+   },
+   "place_id": "ChIJexample-geocode-0004",
+   "types": [
+    "route"
+   ]
+  }
+ ],
+ "status": "OK"
+}
