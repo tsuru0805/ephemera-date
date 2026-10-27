@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E94EBBADB96C9F2D9951DF7 /* EphemeraHostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0D3DB0D441BA5E80B36AC /* EphemeraHostApp.swift */; };
+		140BE54018833C5B7AE64CFA /* HostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F25F87E3E26E08998D3CA72 /* HostState.swift */; };
+		1B8B2C3558ECFDD974DBBFBF /* PhotoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9299236BDC22BF8C43BB00 /* PhotoFile.swift */; };
+		9C8CCA5D1684E34D326E2FF7 /* HostHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FF91AE903492939CD877B /* HostHomeView.swift */; };
+		CA9A5FB534E23C8AE0AB9A24 /* EphemeraPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2507359971558D84663F17 /* EphemeraPage.swift */; };
+		F51361A16779E979598E26A1 /* EphemeraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5FC4961E93536A68AD3C1 /* EphemeraViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B2507359971558D84663F17 /* EphemeraPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EphemeraPage.swift; sourceTree = "<group>"; };
+		0D9299236BDC22BF8C43BB00 /* PhotoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFile.swift; sourceTree = "<group>"; };
+		4CC5FC4961E93536A68AD3C1 /* EphemeraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EphemeraViewController.swift; sourceTree = "<group>"; };
+		6F25F87E3E26E08998D3CA72 /* HostState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostState.swift; sourceTree = "<group>"; };
+		8C3FF91AE903492939CD877B /* HostHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostHomeView.swift; sourceTree = "<group>"; };
+		AEA0D3DB0D441BA5E80B36AC /* EphemeraHostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EphemeraHostApp.swift; sourceTree = "<group>"; };
+		CA32435421500C49C79B0E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EEFC26F8EB26A53F3F2577FC /* EphemeraHost.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EphemeraHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		636092FFCE8C12887D78019A /* EphemeraHost */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0D3DB0D441BA5E80B36AC /* EphemeraHostApp.swift */,
+				0B2507359971558D84663F17 /* EphemeraPage.swift */,
+				4CC5FC4961E93536A68AD3C1 /* EphemeraViewController.swift */,
+				8C3FF91AE903492939CD877B /* HostHomeView.swift */,
+				6F25F87E3E26E08998D3CA72 /* HostState.swift */,
+				CA32435421500C49C79B0E1C /* Info.plist */,
+				0D9299236BDC22BF8C43BB00 /* PhotoFile.swift */,
+			);
+			path = EphemeraHost;
+			sourceTree = "<group>";
+		};
+		D4EB5E8F0F8BBE56EBED07EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEFC26F8EB26A53F3F2577FC /* EphemeraHost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1BB6622117F837632D2120F = {
+			isa = PBXGroup;
+			children = (
+				636092FFCE8C12887D78019A /* EphemeraHost */,
+				D4EB5E8F0F8BBE56EBED07EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8E1B6F9FEE90689D54DC661 /* EphemeraHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ABEAFA35A436E707EBDBDB9 /* Build configuration list for PBXNativeTarget "EphemeraHost" */;
+			buildPhases = (
+				0C68BAA626915623A6B38B43 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EphemeraHost;
+			packageProductDependencies = (
+			);
+			productName = EphemeraHost;
+			productReference = EEFC26F8EB26A53F3F2577FC /* EphemeraHost.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B140128D4D84ED1C7D910B5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F8E1B6F9FEE90689D54DC661 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 931D5026FFE466996172ECC6 /* Build configuration list for PBXProject "EphemeraHost" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F1BB6622117F837632D2120F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D4EB5E8F0F8BBE56EBED07EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8E1B6F9FEE90689D54DC661 /* EphemeraHost */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C68BAA626915623A6B38B43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E94EBBADB96C9F2D9951DF7 /* EphemeraHostApp.swift in Sources */,
+				CA9A5FB534E23C8AE0AB9A24 /* EphemeraPage.swift in Sources */,
+				F51361A16779E979598E26A1 /* EphemeraViewController.swift in Sources */,
+				9C8CCA5D1684E34D326E2FF7 /* HostHomeView.swift in Sources */,
+				140BE54018833C5B7AE64CFA /* HostState.swift in Sources */,
+				1B8B2C3558ECFDD974DBBFBF /* PhotoFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04461BE54B8285B1F6C4E3C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2DC450F3B37A99F3C43281C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = EphemeraHost/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ephemerahost;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CAC6B6F1FA16AC7E41793412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = EphemeraHost/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ephemerahost;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D5263D5B4CE306CE47600672 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2ABEAFA35A436E707EBDBDB9 /* Build configuration list for PBXNativeTarget "EphemeraHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAC6B6F1FA16AC7E41793412 /* Debug */,
+				2DC450F3B37A99F3C43281C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		931D5026FFE466996172ECC6 /* Build configuration list for PBXProject "EphemeraHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04461BE54B8285B1F6C4E3C3 /* Debug */,
+				D5263D5B4CE306CE47600672 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B140128D4D84ED1C7D910B5D /* Project object */;
+}

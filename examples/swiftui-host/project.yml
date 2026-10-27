@@ -1,0 +1,38 @@
+# xcodegen spec for the example host. The generated EphemeraHost.xcodeproj is checked in, so `xcodegen` is only
+# needed after editing this file: `cd examples/swiftui-host && xcodegen generate`.
+name: EphemeraHost
+options:
+  bundleIdPrefix: com.example.ephemerahost
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+targets:
+  EphemeraHost:
+    type: application
+    platform: iOS
+    sources:
+      - path: EphemeraHost
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.ephemerahost
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: EphemeraHost/Info.plist
+    info:
+      path: EphemeraHost/Info.plist
+      properties:
+        CFBundleDisplayName: Host
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # the example talks to an engine on this Mac over plain http (127.0.0.1 / LAN); a real host uses https
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
